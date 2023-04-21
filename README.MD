@@ -1,0 +1,18 @@
+# FiguresSolution
+
+A solution for calculating various characteristics of various primitive figures
+
+## Structure of the repository
+1. FiguresSolution.Figures - Libriry of figures
+2. FiguresSolution.Test - Test project
+3. FiguresSolution.SQL - SQL solution for second job
+
+## Initial data for the job
+> 1. Напишите на C# библиотеку для поставки внешним клиентам, которая умеет вычислять площадь круга по радиусу и треугольника по трем сторонам. Дополнительно к работоспособности оценим:
+> - Юнит-тесты
+> - Легкость добавления других фигур
+> - Вычисление площади фигуры без знания типа фигуры в compile-time
+> - Проверку на то, является ли треугольник прямоугольным
+> 
+> 2. В базе данных MS SQL Server есть продукты и категории. Одному продукту может соответствовать много категорий, в одной категории может быть много продуктов. Напишите SQL запрос для выбора всех пар «Имя продукта – Имя категории». Если у продукта нет категорий, то его имя все равно должно выводиться.
+

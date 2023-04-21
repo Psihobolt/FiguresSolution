@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiguresSolution.Figures", "FiguresSolution.Figures\FiguresSolution.Figures.csproj", "{B3CC8B54-300E-41B6-BA33-64B236B98FDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{766ABDA7-1943-48F5-9663-F900B5E53721}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.MD = README.MD
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3CC8B54-300E-41B6-BA33-64B236B98FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3CC8B54-300E-41B6-BA33-64B236B98FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3CC8B54-300E-41B6-BA33-64B236B98FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3CC8B54-300E-41B6-BA33-64B236B98FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E67C6BB-A157-4D0E-8081-29E4FAC2A965}
+	EndGlobalSection
+EndGlobal
