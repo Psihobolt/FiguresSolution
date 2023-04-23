@@ -1,10 +1,5 @@
 ﻿using FiguresSolution.Figures.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FiguresSolution.Figures.Entities
 {
@@ -14,7 +9,7 @@ namespace FiguresSolution.Figures.Entities
         {
             return Math.Sqrt(Math.Pow(two.X - one.X, 2) + Math.Pow(two.Y - one.Y, 2));
         }
-        public IEnumerable<double> Sides { get
+        public IReadOnlyCollection<double> Sides { get
             {
                 return Points
                     .Select((x, idx) =>
@@ -27,7 +22,7 @@ namespace FiguresSolution.Figures.Entities
         }
 
         public string Name { get; private set; }
-        public IEnumerable<Point> Points { get; private set; }
+        public IReadOnlyCollection<Point> Points { get; private set; }
 
         public bool IsRectangular { get {
                 return Sides.First() == Math.Sqrt(Math.Pow(Sides.ElementAt(1), 2) + Math.Pow(Sides.ElementAt(2), 2));
@@ -39,7 +34,7 @@ namespace FiguresSolution.Figures.Entities
             } }
 
 
-        public Triangle(string name, IEnumerable<Point> points)
+        public Triangle(string name, IReadOnlyCollection<Point> points)
         {
             if (points == null) 
                 throw new ArgumentNullException(nameof(points));
