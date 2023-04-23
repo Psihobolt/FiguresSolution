@@ -8,6 +8,6 @@ namespace FiguresSolution.Figures.Interfaces
 {
     public interface ICalculateArea
     {
-        int Area { get; }
+        double Area { get; }
     }
 }

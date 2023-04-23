@@ -8,18 +8,20 @@ using System.Threading.Tasks;
 
 namespace FiguresSolution.Figures.Entities
 {
-    public abstract class Triangle : IFigure, ITriangle
+    public class Triangle : ITriangle
     {
-        private double GetLengthLine (Point one, Point two)
+        private double GetLengthLine(Point one, Point two)
         {
             return Math.Sqrt(Math.Pow(two.X - one.X, 2) + Math.Pow(two.Y - one.Y, 2));
         }
-        private IEnumerable<double> Cathets { get
+        public IEnumerable<double> Sides { get
             {
-                return Points.Select((x, idx) => 
-                    idx == Points.Count() - 1 
-                    ? GetLengthLine(Points.ElementAt(0), x) 
-                    : GetLengthLine(Points.ElementAt(idx + 1), x))
+                return Points
+                    .Select((x, idx) =>
+                        idx == Points.Count() - 1
+                        ? GetLengthLine(Points.ElementAt(0), x)
+                        : GetLengthLine(Points.ElementAt(idx + 1), x))
+                    .OrderByDescending(x => x)
                .ToList();
             }
         }
@@ -27,9 +29,14 @@ namespace FiguresSolution.Figures.Entities
         public string Name { get; private set; }
         public IEnumerable<Point> Points { get; private set; }
 
-        public bool IsRectangular => throw new NotImplementedException();
+        public bool IsRectangular { get {
+                return Sides.First() == Math.Sqrt(Math.Pow(Sides.ElementAt(1), 2) + Math.Pow(Sides.ElementAt(2), 2));
+            } }
 
-        public int Area => throw new NotImplementedException();
+        public double Area { get {
+                var p = Sides.Sum(x=>x)/2;
+                return Math.Sqrt(p * (p - Sides.First()) * (p - Sides.ElementAt(1)) * (p - Sides.ElementAt(2)));
+            } }
 
 
         public Triangle(string name, IEnumerable<Point> points)
@@ -40,7 +47,7 @@ namespace FiguresSolution.Figures.Entities
             if (points.Count() != 3)
                 throw new ArgumentException("The number of points for the triangle must be three");
 
-            if (points.Distinct().Count() == 3) 
+            if (points.Distinct().Count() != 3) 
                 throw new ArgumentException("The points for the triangle must be located far apart from each other");
 
             Name = name;

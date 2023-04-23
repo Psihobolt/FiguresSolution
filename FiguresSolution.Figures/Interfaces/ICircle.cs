@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FiguresSolution.Figures.Interfaces
 {
-    public interface ICircle
+    public interface ICircle : IFigure
     {
         Point Center { get; }
-        int Radius { get; }
+        double Radius { get; }
     }
 }
